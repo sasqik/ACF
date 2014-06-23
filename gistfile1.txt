@@ -1,0 +1,25 @@
+//To display an image using ACF, one would set the image custom field to image url and call the img as follows:
+
+<?php if( get_field( 'field_name' ) ): ?>
+
+	<?php while( has_sub_field( 'field_name' ) ): ?>
+	
+		<img scr="<?php the_sub_field( 'image' ); ?>" alt="">
+	
+  	<?php endwhile; ?>
+
+<?php endif; ?>
+
+// To display a different size, ie. thumbnail, medium, large or custom size you can use the following:
+
+<?php if( get_field( 'field_name' ) ): ?>
+
+	<?php while( has_sub_field( 'field_name' ) ): ?>
+	
+		<?php $image = wp_get_attachment_image_src( get_sub_field( 'image' ), 'image_size' ); ?> //change this to whatever size you want
+
+		<img src="<?php echo esc_url( $image[0] ); ?>" alt=""> // Make use you have images set to image ID in the ACF option
+	
+  	<?php endwhile; ?>
+
+<?php endif; ?>
