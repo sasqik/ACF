@@ -4,7 +4,7 @@
 
 	<?php while( has_sub_field( 'field_name' ) ): ?>
 	
-		<img scr="<?php the_sub_field( 'image' ); ?>" alt="">
+		<img src="<?php the_sub_field( 'image' ); ?>" alt="">
 	
   	<?php endwhile; ?>
 
